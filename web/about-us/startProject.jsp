@@ -12,6 +12,10 @@
     <meta charset="UTF-8">
     <title>SIS</title>
   <link rel="stylesheet" href="../css/style2.css">
+  <script type="text/javascript">
+    window.history.forward();
+    function noBack() { window.history.forward(); }
+</script>
 </head>
 <body>
     <div class="wrapper">
@@ -51,6 +55,11 @@
 	</ul>
      </div>
    
+ <%
+    response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");//HTTP 1.1
+    response.setHeader("Pragma","no-cache"); //HTTP 1.0
+    response.setDateHeader ("Expires", 0); //prevents caching at the proxy server
+%>
 
         <script src="js/index.js"s></script>
 

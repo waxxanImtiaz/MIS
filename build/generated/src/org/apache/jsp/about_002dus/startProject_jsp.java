@@ -51,6 +51,10 @@ public final class startProject_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("    <meta charset=\"UTF-8\">\n");
       out.write("    <title>SIS</title>\n");
       out.write("  <link rel=\"stylesheet\" href=\"../css/style2.css\">\n");
+      out.write("  <script type=\"text/javascript\">\n");
+      out.write("    window.history.forward();\n");
+      out.write("    function noBack() { window.history.forward(); }\n");
+      out.write("</script>\n");
       out.write("</head>\n");
       out.write("<body>\n");
       out.write("    <div class=\"wrapper\">\n");
@@ -94,6 +98,13 @@ public final class startProject_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\t</ul>\n");
       out.write("     </div>\n");
       out.write("   \n");
+      out.write(" ");
+
+    response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");//HTTP 1.1
+    response.setHeader("Pragma","no-cache"); //HTTP 1.0
+    response.setDateHeader ("Expires", 0); //prevents caching at the proxy server
+
+      out.write("\n");
       out.write("\n");
       out.write("        <script src=\"js/index.js\"s></script>\n");
       out.write("\n");

@@ -19,6 +19,10 @@
 
 <script src="../wp-content/themes/duet/menu/jquery-1.10.2.min.js"></script>
 <script src="jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+    window.history.forward();
+    function noBack() { window.history.forward(); }
+</script>
 <script>
 $(document).ready(function(){
         $("#post-22").load("maincontent.html", function(responseTxt, statusTxt, xhr){
@@ -39,12 +43,17 @@ $(document).ready(function(){
 <link rel="stylesheet" href="../wp-content/themes/duet/menu/daisynav.css">
 
 
-<body class="page page-id-22 page-parent page-template-default">
+<body class="page page-id-22 page-parent page-template-default"  onload="noBack();"
+    onpageshow="if (event.persisted) noBack();" onunload="">
 <% 
     beans.Students personalInfo = (beans.Students)session.getAttribute("personalInfo");
     session.setAttribute("persoanlInfo", personalInfo);
 %>
-
+<%
+    response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");//HTTP 1.1
+    response.setHeader("Pragma","no-cache"); //HTTP 1.0
+    response.setDateHeader ("Expires", 0); //prevents caching at the proxy server
+%>
 
     	<!-- page -->
 		<script src="../wp-content/themes/duet/backstretch/jquery.backstretch.min.js"></script>
@@ -78,7 +87,7 @@ $(document).ready(function(){
     	<div class="inner_header">
          
                 <div class="logo">
-                <a href="index.html" title="MIS DUET">
+                <a href="index.jsp" title="MIS DUET">
                          <img src="../wp-content/themes/duet/images/logo1.jpg" height=314  width=244>
                                 </a>
                 </div>
@@ -87,7 +96,7 @@ $(document).ready(function(){
                 </div>
                 <nav id="nav-mobile">
                     	<div class="menu-top-menu-container"><ul id="menu-top-menu" class="menu">
-<li id="menu-item-7286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7286"><a href="#">Log Out</a></li>
+<li id="menu-item-7286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7286"><a href="startProject.jsp">Log Out</a></li>
 </ul></div>                </nav>
                 <div class="top_menu">
                 	<div class="menu-header"><ul id="menu-top-menu-1" class="menu">
@@ -110,19 +119,19 @@ $(document).ready(function(){
             	<div class="inner_wraper">
                     <div id="access" role="navigation">
                         <div class="menu-header"><ul id="menu-main-menu-1" class="menu">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-22 current_page_item menu-item-has-children menu-item-36"><a href="index.html">Home Page </a>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-22 current_page_item menu-item-has-children menu-item-36"><a href="personel.html">Personel </a>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-22 current_page_item menu-item-has-children menu-item-36"><a href="index.jsp">Home Page </a>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-22 current_page_item menu-item-has-children menu-item-36"><a href="personelInfo.jsp">Personel </a>
 						
 <ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7840"><a href="personel.html">Personel Information</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7840"><a href="personelInfo.jsp">Personel Information</a></li>
 </ul>
 </li>
 
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-50"><a href="academics.html"> Academics </a>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-50"><a href="academics.jsp"> Academics </a>
 <ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-975"><a href="m_attendance.html">Attendance</a>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-975"><a href="m_attendance.jsp">Attendance</a>
 	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-980"><a href="attendance.html">1st Semister</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-980"><a href="attendance.jsp">1st Semister</a></li>
 		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-981"><a href="#">2nd Semister</a></li>
 		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-982"><a href="#">3rd Semister</a></li>
 		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7308"><a href="#">4th Semister</a></li>
@@ -131,15 +140,15 @@ $(document).ready(function(){
 		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-982"><a href="#">7th Semister</a></li>
 		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7308"><a href="#">8th Semister</a></li>
 	</ul>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-975"><a href="library.html">Library</a>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-975"><a href="library.jsp">Library</a>
 	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-980"><a href="library.html">Borrowed Books</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-980"><a href="library.jsp">Borrowed Books</a></li>
 		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-981"><a href="#">Books List</a></li>
 		
 	</ul>
 </li>
 
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-975"><a href="library.html">Lectures</a>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-975"><a href="library.jsp">Lectures</a>
 	<ul class="sub-menu">
 		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-980"><a href="#">1st Semister</a></li>
 		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-981"><a href="#">2nd Semister</a></li>
@@ -155,16 +164,16 @@ $(document).ready(function(){
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9573"><a href="#">Time table</a></li>
 </ul>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-37"><a href="miscellaneous.html"> Miscellenous </a>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-37"><a href="miscellaneous.jsp"> Miscellenous </a>
 <ul class="sub-menu">
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9783"><a href="#">News</a></li>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-515"><a href="#">Messege</a>
 	
 </ul>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-37"><a href="m_result.html"> Result / Exams </a>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-37"><a href="m_result.jsp"> Result / Exams </a>
 <ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9783"><a href="result.html">1st Semister</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9783"><a href="result.jsp">1st Semister</a></li>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-515"><a href="#">2nd Semister</a>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8238"><a href="#">3rd Semister</a>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-515"><a href="#">4th Semister</a>
@@ -203,9 +212,9 @@ $(document).ready(function(){
 	
 </ul>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7300"><a href="m_attendance.html"> Attendance </a>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7300"><a href="m_attendance.jsp"> Attendance </a>
 <ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8788"><a href="attendance.html">1st Semister</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8788"><a href="attendance.jsp">1st Semister</a></li>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8787"><a href="#">2nd Semister</a></li>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8791"><a href="#">3rd Semister</a></li>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8790"><a href="#">4th Semister</a></li>
@@ -215,9 +224,9 @@ $(document).ready(function(){
 	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7306"><a href="#">8th Semister</a></li>
 </ul> 
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7300"><a href="library.html"> Library </a>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7300"><a href="library.jsp"> Library </a>
 <ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8787"><a href="library.html">Borrowed Books</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8787"><a href="library.jsp">Borrowed Books</a></li>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8791"><a href="#">Books List</a></li>
 </ul>
 </li>
@@ -263,7 +272,7 @@ $(document).ready(function(){
 </li>
 
 
-<li class="page_item page-item-59 page_item_has_children"><a>Computer Systems Engineerig</a>
+<li class="page_item page-item-59 page_item_has_children"><a><%=personalInfo.getDepartment()%></a>
 <ul class='children'>
 
 </ul>
@@ -280,7 +289,7 @@ $(document).ready(function(){
 
 </ul>
 </li>
-<li class="page_item page-item-7830"><a href="complaint.html">Complaints/Help</a></li>
+<li class="page_item page-item-7830"><a href="complaint.jsp">Complaints/Help</a></li>
   </ul>
 
     
@@ -303,7 +312,7 @@ $(document).ready(function(){
         <li id="nav_menu-2" class="widget-container widget_nav_menu"><h3 class="widget-title">PERSONEL</h3><div class="menu-about-us-container"><ul id="menu-about-us" class="menu"><li id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="#">Personel Information</a></li>
 </ul></div></li>
 <li id="nav_menu-3" class="widget-container widget_nav_menu"><h3 class="widget-title"> </h3></a> <div class="menu-footer-house-of-habib-container"><ul id="menu-footer-house-of-habib" class="menu">
-<li id="menu-item-6363" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6363"><a href="complaint.html">Complaints/Help</a></li>
+<li id="menu-item-6363" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6363"><a href="complaint.jsp">Complaints/Help</a></li>
 
 </ul></div></li>      </div>
       <div class="footer_col">

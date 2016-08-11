@@ -2,10 +2,9 @@
 <html>
 
 <head>
-	
+
 <link rel="stylesheet" type="text/css" media="all" href="../wp-content/themes/duet/style.css" />
 
-	  
 <!-- MIS DUET-->
 <title>MIS DUET</title>
 
@@ -40,7 +39,10 @@
     //    	$.backstretch("");
         </script>
 		
-	
+	<% 
+    beans.Students personalInfo = (beans.Students)session.getAttribute("personalInfo");
+    session.setAttribute("persoanlInfo", personalInfo);
+    %> 
 <div id="wrapper" class="hfeed">
 	<div class="inner_wrap">
     <div id="header">
@@ -50,7 +52,7 @@
     	<div class="inner_header">
          
                 <div class="logo">
-                <a href="../index.html" title="MIS DUET">
+                <a href="../index.jsp" title="MIS DUET">
                          <img src="../wp-content/themes/duet/images/logo1.jpg" height=314  width=244>
                                 </a>
                 </div>
@@ -59,11 +61,11 @@
                 </div>
                 <nav id="nav-mobile">
                     	<div class="menu-top-menu-container"><ul id="menu-top-menu" class="menu">
-<li id="menu-item-7286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7286"><a href="#">Log Out</a></li>
+<li id="menu-item-7286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7286"><a href="startProject.jsp">Log Out</a></li>
 </ul></div>                </nav>
                 <div class="top_menu">
                 	<div class="menu-header"><ul id="menu-top-menu-1" class="menu">
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7286"><a href="#">Log Out</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7286"><a href="startProject.jsp">Log Out</a></li>
 </ul></div>                
       
                 <div class="search">
@@ -83,25 +85,25 @@
 			<!--.inner_head-->
             
             <div class="vav_wrap">
-            <div  class="menu-toggle-button" data-menu-id="demo-menu">MENU <i>---</i>â‰¡</div>
+            <div  class="menu-toggle-button" data-menu-id="demo-menu">MENU <i>---</i>?</div>
             <div class="res_menu"><ul class="menu-list" id="demo-menu"><li id="item-id">Menu: </li>
 			
 			</div>            
             	<div class="inner_wraper">
                     <div id="access" role="navigation">
                         <div class="menu-header"><ul id="menu-main-menu-1" class="menu">
-						<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-22 current_page_item menu-item-has-children menu-item-36"><a href="index.html">Home Page </a>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-22 current_page_item menu-item-has-children menu-item-36"><a href="personel.html">Personel </a>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-22 current_page_item menu-item-has-children menu-item-36"><a href="index.jsp">Home Page </a>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-22 current_page_item menu-item-has-children menu-item-36"><a href="personelInfo.jsp">Personel </a>
 						
 <ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7840"><a href="personel.html">Personel Information</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7840"><a href="personelInfo.jsp">Personel Information</a></li>
 </ul>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-50"><a href="academics.html"> Academics </a>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-50"><a href="academics.jsp"> Academics </a>
 <ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-975"><a href="m_attendance.html">Attendance</a>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-975"><a href="m_attendance.jsp">Attendance</a>
 	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-980"><a href="attendance.html">1st Semister</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-980"><a href="attendance.jsp">1st Semister</a></li>
 		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-981"><a href="#">2nd Semister</a></li>
 		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-982"><a href="#">3rd Semister</a></li>
 		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7308"><a href="#">4th Semister</a></li>
@@ -110,9 +112,9 @@
 		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-982"><a href="#">7th Semister</a></li>
 		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7308"><a href="#">8th Semister</a></li>
 	</ul>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-975"><a href="library.html">Library</a>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-975"><a href="library.jsp">Library</a>
 	<ul class="sub-menu">
-		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-980"><a href="library.html">Borrowed Books</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-980"><a href="library.jsp">Borrowed Books</a></li>
 		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-981"><a href="#">Books List</a></li>
 		
 	</ul>
@@ -121,16 +123,16 @@
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9573"><a href="#">Time table</a></li>
 </ul>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-37"><a href="miscellaneous.html"> Miscellenous </a>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-37"><a href="miscellaneous.jsp"> Miscellenous </a>
 <ul class="sub-menu">
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9783"><a href="#">News</a></li>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-515"><a href="#">Messege</a>
 	
 </ul>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-37"><a href="m_result.html"> Result / Exams </a>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-37"><a href="m_result.jsp"> Result / Exams </a>
 <ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9783"><a href="result.html">1st Semister</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9783"><a href="result.jsp">1st Semister</a></li>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-515"><a href="#">2nd Semister</a>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8238"><a href="#">3rd Semister</a>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-515"><a href="#">4th Semister</a>
@@ -146,9 +148,9 @@
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8235"><a href="#">Points location</a></li>
 </ul>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7300"><a href="m_attendance.html"> Attendance </a>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7300"><a href="m_attendance.jsp"> Attendance </a>
 <ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8788"><a href="attendance.html">1st Semister</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8788"><a href="attendance.jsp">1st Semister</a></li>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8787"><a href="#">2nd Semister</a></li>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8791"><a href="#">3rd Semister</a></li>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8790"><a href="#">4th Semister</a></li>
@@ -158,22 +160,20 @@
 	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7306"><a href="#">8th Semister</a></li>
 </ul>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7300"><a href="library.html"> Library </a>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7300"><a href="library.jsp"> Library </a>
 <ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8787"><a href="library.html">Borrowed Books</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8787"><a href="library.jsp">Borrowed Books</a></li>
 	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8791"><a href="#">Books List</a></li>
-
 </ul>
 </li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7307"><a href="#"> Course Content </a></li>
-
 </ul></div>                    </div><!-- #access -->
                     <nav id="nav-mobile">
                     	                    </nav>
                  </div>   
         	</div>
 	</div><!-- #header -->
-<div id="main">
+	<div id="main">
            
             	
        
@@ -182,28 +182,18 @@
 
 			
 
-				<div id="post-136" class="post-136 page type-page status-publish has-post-thumbnail hentry">
-											<h1 class="entry-title">Complaints/Help</h1>
+				<div id="post-22" class="post-22 page type-page status-publish has-post-thumbnail hentry">
+											<h1 class="entry-title">Academics</h1>
 					
 					<div class="entry-content">
-						<div class="accordion"> 
-						<div class="panel-content activeClass">
-<div>
+<div class="link_images">
+<div class="menu_item col4"><a href="m_attendance.jsp" ><h2 class="blue white" style="bottom:0">Attendance</h2><img class="alignnone size-full wp-image-88" src="../wp-content/uploads/2014/09/attendance.png" alt="uni-leaders" width="256" height="165" /></a></div><br />
+<div class="menu_item col4"><a href="library.jsp" ><h2 class="yellow indigo" style="bottom:0">Library</h2><img class="alignnone size-full wp-image-85" src="../wp-content/uploads/2014/09/library.jpg" alt="offic-of-president" width="257" height="165" /></a></div><br />
+<div class="menu_item col4"><a href="#" ><h2 class="purple indigo" style="bottom:0">Lectures</h2><img class="alignnone size-full wp-image-84" src="../wp-content/uploads/2014/09/lectures.jpg" alt="vision-values" width="256" height="165" /></a></div><br />
+<div class="menu_item col4"><a href="#" ><h2 class="red white" style="bottom:0">Time Table</h2><img class="alignnone size-full wp-image-88" src="../wp-content/uploads/2014/09/time table.jpg" alt="uni-leaders" width="256" height="165" /></a></div>
 
-<form>
-Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="text1" name="Name" value="" size="35" ><br>
-Roll Number:&nbsp;
-<input type="text2" name="Roll No" value="" size="35" ><br>
-Complaints/Help:&nbsp;&nbsp;
-<center>
-<textarea cols="70" rows="7"></textarea>
-</center>
-<input type="submit" value="Send">
-</form>
 
 </div>
-</div> </div>
 																	</div><!-- .entry-content -->
 				</div><!-- #post-## -->
 
@@ -213,39 +203,43 @@ Complaints/Help:&nbsp;&nbsp;
                         
 		<div id="primary" class="widget-area" role="complementary">
 
-  <h3 class="widget-title side">Abdul Qayyum Laghari</h3>
- <ul class="tb_side">
-  	<li class="page_item page-item-51 page_item_has_children"><a> D_13_CS_30</a>
+  <h3 class="widget-title side"><%=personalInfo.getName()%></h3>
+  <ul class="tb_side">
+  	<li class="page_item page-item-51 page_item_has_children"><a><%=personalInfo.getRollNum()%></a>
 <ul class='children'>
 	
 </ul>
 </li>
-<li class="page_item page-item-53 page_item_has_children"><a>Ashique Ali laghari</a>
-<ul class='children'>
-	
-</ul>
-</li>
-
-
-<li class="page_item page-item-59 page_item_has_children"><a>Computer Systems Engineerig</a>
-<ul class='children'>
-
-</ul>
-</li>
-<li class="page_item page-item-53 page_item_has_children"><a>Contact No: 0312 4381011 </a>
+<li class="page_item page-item-53 page_item_has_children"><a><%=personalInfo.getFatherName()%></a>
 <ul class='children'>
 	
 </ul>
 </li>
 
 
-<li class="page_item page-item-59 page_item_has_children"><a>F/contact: 0300 3987447</a>
+<li class="page_item page-item-59 page_item_has_children"><a><%=personalInfo.getDepartment()%></a>
+<ul class='children'>
+
+</ul>
+</li>
+<li class="page_item page-item-53 page_item_has_children"><a>Contact No:<%=personalInfo.getStContactNum()%> </a>
+<ul class='children'>
+	
+</ul>
+</li>
+
+
+<li class="page_item page-item-59 page_item_has_children"><a>F/contact: <%=personalInfo.getFtContactNum()%></a>
 <ul class='children'>
 
 </ul>
 </li>
 <li class="page_item page-item-7830"><a href="#">Complaints/Help</a></li>
-  </ul>			
+  </ul>
+
+    
+	
+			
 		</div><!-- #primary .widget-area -->
 
 
@@ -314,7 +308,8 @@ registrar@duet.edu.pk </a></li>
       <div class="footer_social"> 
       </div>
       <div class="footer_right">
-       Rights Reserved - Dawood unniversity Of Engineering and Technology karachi | Laghari - Wassan - Lashari - Kumar <a href="#" target="_blank" style="color:#fff !important;"></a></p>
+        
+          © Dawood unniversity Of Engineering and Technology karachi - All Rights Reserved | Laghari - Wassan - Lashari - Kumar <a href="#" target="_blank" style="color:#fff !important;"></a></p>
       </div>
     </div>
     <!-- #site-info --> 
