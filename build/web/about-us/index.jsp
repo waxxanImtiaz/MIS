@@ -18,7 +18,21 @@
 <title>MIS DUET</title>
 
 <script src="../wp-content/themes/duet/menu/jquery-1.10.2.min.js"></script>
-
+<script src="jquery-3.1.0.min.js"></script>
+<script>
+$(document).ready(function(){
+        $("#post-22").load("maincontent.html", function(responseTxt, statusTxt, xhr){
+//            if(statusTxt == "success")
+//                alert("External content loaded successfully!");
+//            if(statusTxt == "error")
+//                alert("Error: " + xhr.status + ": " + xhr.statusText);
+    });
+    
+    $("#personalInfo").click(function(){
+        $("#post-22").load("personalInfo.jsp", function(responseTxt, statusTxt, xhr){});
+    });
+});
+</script>
 </head>
 
 <link rel="stylesheet" href="../wp-content/themes/duet/menu/demo.css">
@@ -226,20 +240,7 @@
 			
 
 				<div id="post-22" class="post-22 page type-page status-publish has-post-thumbnail hentry">
-											<h1 class="entry-title">Profile</h1>
-					
-					<div class="entry-content">
-<div class="link_images">
-<div class="menu_item col4"><a href="personel.html" ><h2 class="red white" style="bottom:0">Personel Information</h2><img class="alignnone size-full wp-image-84" src="../wp-content/uploads/2014/09/personel.jpg" alt="vision-values" width="256" height="165" /></a></div><br />
-<div class="menu_item col4"><a href="academics.html" ><h2 class="blue white" style="bottom:0">Academics</h2><img class="alignnone size-full wp-image-88" src="../wp-content/uploads/2014/09/academics.jpg" alt="uni-leaders" width="256" height="165" /></a></div><br />
-<div class="menu_item col4"><a href="miscellaneous.html" ><h2 class="yellow indigo" style="bottom:0">Miscellenous</h2><img class="alignnone size-full wp-image-85" src="../wp-content/uploads/2014/09/miscellaneous.jpg" alt="offic-of-president" width="257" height="165" /></a></div><br />
-<div class="menu_item col4"><a href="m_result.html" ><h2 class="yellow indigo" style="bottom:0">Result</h2><img class="alignnone size-full wp-image-85" src="../wp-content/uploads/2014/09/result.jpg" alt="offic-of-president" width="257" height="165" /></a></div><br />
-<div class="menu_item col4"><a href="#" ><h2 class="blue white" style="bottom:0">Transport</h2><img class="alignnone size-full wp-image-84" src="../wp-content/uploads/2014/09/transport.jpg" alt="vision-values" width="256" height="165" /></a></div><br />
-<div class="menu_item col4"><a href="#" ><h2 class="red white" style="bottom:0">Complaints/Help</h2><img class="alignnone size-full wp-image-88" src="../wp-content/uploads/2014/09/duet.jpg" alt="uni-leaders" width="256" height="165" /></a></div>
-
-
-</div>
-																	</div><!-- .entry-content -->
+			
 				</div><!-- #post-## -->
 
 				
